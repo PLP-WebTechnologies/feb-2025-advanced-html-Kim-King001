@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+</head>
+<body>
+    <!-- Roman Numeral Ordered List -->
+    <h2>Top Programming Languages:</h2>
+    <ol type="I">
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C#</li>
+        <li>PHP</li>
+    </ol>
+
+    <!-- External Image from Pexels -->
+    <h2>Featured Image:</h2>
+    <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg" 
+         alt="Coding workspace" 
+         title="Programming Setup"
+         width="600"
+         height="400">
+
+    <!-- Contacts Table -->
+    <h2>Contact List:</h2>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Mobile</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Brian Kimutai</td>
+                <td>Nairobi</td>
+                <td>+25490854180</td>
+                <td>briankimking@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Stephen Kyalo</td>
+                <td>Eldoret</td>
+                <td>+25435856100</td>
+                <td>briankimking@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Edwin Mayaka</td>
+                <td>Kisumu</td>
+                <td>+25490854180</td>
+                <td>briankimking@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Brian Jinua</td>
+                <td>Kampala</td>
+                <td>+25539456789</td>
+                <td>briankimking@gmail.com</td>
+            </tr>
+    
+        </tbody>
+    </table>
+
+    <!-- Registration Form -->
+    <h2>Registration Form</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <!-- Text Inputs -->
+        <div>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" 
+                   placeholder="Enter your full name"
+                   required
+                   minlength="3">
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"
+                   placeholder="example@domain.com"
+                   required>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"
+                   placeholder="Minimum 8 characters"
+                   required
+                   minlength="8"
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        </div>
+
+        <div>
+            <label for="birthdate">Birth Date:</label>
+            <input type="date" id="birthdate" name="birthdate"
+                   required
+                   min="1900-01-01" max="2025-03-25">
+        </div>
+
+        <!-- Dropdown -->
+        <div>
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="US">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="CA">Canada</option>
+            </select>
+        </div>
+
+        <!-- Radio Buttons -->
+        <div>
+            <span>Gender:</span>
+            <label>
+                <input type="radio" name="gender" value="male" required>
+                Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female">
+                Female
+            </label>
+        </div>
+
+        <!-- Checkboxes -->
+        <div>
+            <label>
+                <input type="checkbox" name="newsletter" required>
+                Subscribe to Newsletter
+            </label>
+            <label>
+                <input type="checkbox" name="terms" required>
+                Agree to Terms & Conditions
+            </label>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        // Basic form validation
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
